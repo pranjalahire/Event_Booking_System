@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO events (event_name, event_date, event_location, available_seats,event_fees) VALUES ('$event_name', '$event_date', '$event_location', '$available_seats','$event_fees')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Event added successfully!";
+        echo "<h1>Event added successfully!</h1>";
         echo "<p><a href='admin_dashboard.php'>Back to Admin Dashboard</a></p>";
     } else {
         echo "Event addition failed: " . $conn->error;

@@ -39,8 +39,8 @@ $b_result = $conn->query($bookings);
         <h1 style="text-align:center; color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:80px">Event Booking System - Events</h1>
     </header>
     <main>
-        <h2>Welcome, <?php echo $_SESSION["username"]; ?>!</h2>
-        <p>Available Events:</p>
+        <h2>&nbsp;&nbsp;&nbsp;Welcome, <?php echo $_SESSION["username"]; ?>!</h2>
+        <p>&nbsp;&nbsp;&nbsp;Available Events:</p>
 
         <?php
         if ($result->num_rows > 0) {
@@ -65,7 +65,7 @@ $b_result = $conn->query($bookings);
             echo "No events available.";
         }
         ?>
-        <p>Your Bookings:</p>
+        <p>&nbsp;&nbsp;&nbsp;Your Bookings:</p>
         <?php
         if ($b_result->num_rows > 0) {
             echo "<div class='container'>";
@@ -88,7 +88,7 @@ $b_result = $conn->query($bookings);
 
     </main>
     <footer>
-        <p><a href="logout.php">Logout</a></p>
+        <p><a href="logout.php">&nbsp;&nbsp;&nbsp;Logout</a></p>
     </footer>
 </body>
 

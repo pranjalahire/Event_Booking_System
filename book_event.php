@@ -78,19 +78,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 style="text-align:center; color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:80px">Event Booking System - Book Event</h1>
     </header>
     <main>
-        <h2>Welcome, <?php echo $_SESSION["username"]; ?>!</h2>
-        <h3>Event Details:</h3>
-        <p><strong>Event Name:</strong> <?php echo $event["event_name"]; ?></p>
-        <p><strong>Event Date:</strong> <?php echo $event["event_date"]; ?></p>
-        <p><strong>Event Location:</strong> <?php echo $event["event_location"]; ?></p>
-        <p><strong>Available Seats:</strong> <?php echo $event["available_seats"]; ?></p>
-        <p><strong>Fees:</strong> <?php echo $event["event_fees"]; ?></p>
+        
+        <h2>&nbsp;&nbsp;&nbsp;Welcome, <?php echo $_SESSION["username"]; ?>!</h2>
+        <h3>&nbsp;&nbsp;&nbsp;Event Details:</h3>
+        <p><strong>&nbsp;&nbsp;&nbsp;Event Name:</strong> <?php echo $event["event_name"]; ?></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Event Date:</strong> <?php echo $event["event_date"]; ?></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Event Location:</strong> <?php echo $event["event_location"]; ?></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Available Seats:</strong> <?php echo $event["available_seats"]; ?></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Fees:</strong> <?php echo $event["event_fees"]; ?></p>
 
         <form action="" method="post">
-            <button type="submit">Book Now</button>
+            <button type="submit">&nbsp;&nbsp;&nbsp;Book Now</button>
         </form>
 
-        <p><a href="index.php">Back to Events</a></p>
+        <p><a href="index.php">&nbsp;&nbsp;&nbsp;Back to Events</a></p>
+        
     </main>
     <footer>
         <p><a href="logout.php">Logout</a></p>

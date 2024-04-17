@@ -46,11 +46,11 @@ $result2 = $conn->query($sql2);
         <h1 style="text-align:center; color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:80px">Admin dashboard</h1>
     </header>
     <main>
-        <h2 style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">" Welcome, <?php echo $_SESSION["username"]; ?>! "</h2>
+        <h2 style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">&nbsp;&nbsp;&nbsp;" Welcome, <?php echo $_SESSION["username"]; ?>! "</h2>
         <!-- <p>Admin functionality goes here..</p> -->
 
-        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">Available Events:</p>
-        <p><a href="admin_add_event.php">Add Event</a></p>
+        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">&nbsp;&nbsp;&nbsp;Available Events:</p>
+        <p><a href="admin_add_event.php">&nbsp;&nbsp;&nbsp;Add Event</a></p>
         <?php
         if ($result->num_rows > 0) {
             echo "<div class='container'>";
@@ -64,6 +64,12 @@ $result2 = $conn->query($sql2);
                 echo "<p>Location: " . $row["event_location"] . "</p>";
                 echo "<p>Available Seats: " . $row["available_seats"] . "</p>";
                 echo "<p>Fees: " . $row["event_fees"] . "</p>";
+
+                echo "<form action='process_delete_event.php' method='post'>";
+                echo "<input type='hidden' name='event_id' value='" . $row["id"] . "'>";
+                echo "<button type='submit'>Delete</button>";
+                echo "</form>";
+
                 // echo "<a href='book_event.php?id=" . $row["id"] . "'>Book Now</a>";
                 echo "</div>";
                 echo "</div>";
@@ -76,7 +82,7 @@ $result2 = $conn->query($sql2);
         ?>
 
         <br>
-        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">Total Bookings:</p>
+        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">&nbsp;&nbsp;&nbsp;Total Bookings:</p>
         <div class="container">
             <table style="border-collapse: collapse; width: 100%;  border: 1px solid;
             ">
@@ -101,7 +107,13 @@ $result2 = $conn->query($sql2);
                             echo "<td style='border:1px solid; text-align:left; padding:8px;'>" . $row["id"] . "</td>";
                             echo "<td style='border:1px solid; text-align:left; padding:8px;'> " . $row["u_id"] . "</td>";
                             echo "<td style='border:1px solid; text-align:left; padding:8px;'>" . $row["e_id"] . "</td>";
-                            echo "<td style='border:1px solid; text-align:left; padding:8px;'>" . $row["booking_date"] . "</td>";
+                            echo "<td style='border:1px solid; text-align:left; padding:8px;'>" . $row["booking_date"];
+
+
+
+                            echo "</td>";
+
+
                             echo "</tr>";
                             // echo "</div>";
                             // echo "</div>";
@@ -120,7 +132,7 @@ $result2 = $conn->query($sql2);
         <br>
 
 
-        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">Total Users:</p>
+        <p style=" color:darkslategray; font-family: 'Brush Script MT', cursive; font-size:40px">&nbsp;&nbsp;&nbsp;Total Users:</p>
         <div class="container">
             <table style="border-collapse: collapse; width: 100%;  border: 1px solid;  ">
                 <thead>
@@ -160,7 +172,7 @@ $result2 = $conn->query($sql2);
 
     </main>
     <footer>
-        <p><a href="logout.php">Logout</a></p>
+        <p><a href="logout.php">&nbsp;&nbsp;&nbsp;Logout</a></p>
     </footer>
 </body>
 

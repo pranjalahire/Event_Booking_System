@@ -41,10 +41,10 @@
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="event1.jpg" class="d-block w-100" alt="...">
+                    <img src="event2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="event2.jpg" class="d-block w-100" alt="...">
+                    <img src="event1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="event3.jpg" class="d-block w-100" alt="...">
