@@ -1,34 +1,40 @@
 
 
+CREATE TABLE `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(255) NOT NULL,
+ `password` varchar(255) NOT NULL,
+ `email` varchar(255) NOT NULL,
+ `mobile_no` varchar(15) NOT NULL,
+ PRIMARY KEY (`id`)
+); 
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    mobile_no VARCHAR(15) NOT NULL
+CREATE TABLE `events` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `event_name` varchar(255) NOT NULL,
+ `event_date` date NOT NULL,
+ `event_location` varchar(255) NOT NULL,
+ `available_seats` int(11) NOT NULL,
+ `event_fees` varchar(50) NOT NULL,
+ PRIMARY KEY (`id`)
 );
 
-CREATE TABLE events (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    event_name VARCHAR(255) NOT NULL,
-    event_date DATE NOT NULL,
-    event_location VARCHAR(255) NOT NULL,
-    available_seats INT NOT NULL
+CREATE TABLE `bookings` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `u_id` int(11) NOT NULL,
+ `e_id` int(11) NOT NULL,
+ `booking_date` timestamp NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (`id`),
+ KEY `u_id` (`u_id`),
+ KEY `e_id` (`e_id`),
+ CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`id`),
+ CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`e_id`) REFERENCES `events` (`id`)
 );
 
-CREATE TABLE bookings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    event_id INT,
-    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (event_id) REFERENCES events(id)
-);
-
-CREATE TABLE admins (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    admin_username VARCHAR(255) NOT NULL,
-    admin_password VARCHAR(255) NOT NULL
+CREATE TABLE `admins` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `admin_name` varchar(255) NOT NULL,
+ `admin_password` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
 );
 
